@@ -7,5 +7,5 @@ public abstract class Car {
         this.distance = distance;
     }
 
-    abstract int calculateFuel(int distance)
+    abstract int calculateFuel(int distance);
 }
