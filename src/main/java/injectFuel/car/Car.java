@@ -10,5 +10,9 @@ public abstract class Car {
         this.distance = distance;
     }
 
-    abstract long calculateFuel(long distance);
+    abstract long calculateFuel();
+
+    public long getFuel() {
+        return this.fuel;
+    }
 }

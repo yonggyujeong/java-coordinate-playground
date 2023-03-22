@@ -2,14 +2,15 @@ package injectFuel.car;
 
 public class Avante extends Car {
 
-    private static long FUEL_EFFICIENCY = 10;
+    private static long FUEL_EFFICIENCY = 15;
 
     public Avante(long distance) {
         super(distance);
+        calculateFuel();
     }
 
     @Override
-    long calculateFuel(long distance) {
+    long calculateFuel() {
         this.fuel = distance / FUEL_EFFICIENCY;
         return this.fuel;
     }

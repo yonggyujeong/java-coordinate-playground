@@ -2,12 +2,14 @@ package injectFuel;
 
 import injectFuel.car.Car;
 
-public class RentCompany {
+import java.util.ArrayList;
+import java.util.List;
 
+public class RentCompany {
+    private List<Car> cars = new ArrayList<>();
     private static RentCompany rentCompany;
 
     private RentCompany() {
-
     }
 
     public static RentCompany create() {
@@ -18,6 +20,16 @@ public class RentCompany {
     }
 
     public void addCar(Car car) {
-
+        cars.add(car);
     }
+
+    public String generateReport() {
+
+        String result = "";
+        for (Car car: cars) {
+            result +=  car.getClass().getSimpleName() + " : "+ car.getFuel() + " \n\r";
+        }
+        return result;
+    }
+
 }
