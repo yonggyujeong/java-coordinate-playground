@@ -1,3 +1,7 @@
+package injectFuel;
+
+import injectFuel.car.Car;
+
 public class RentCompany {
 
     private static RentCompany rentCompany;
