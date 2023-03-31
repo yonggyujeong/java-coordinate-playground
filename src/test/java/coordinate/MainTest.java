@@ -1,25 +1,32 @@
 package coordinate;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
-    private Main main = new Main();
-
     @Test
-    void 좌표계_포맷_검증_invalid_case() {
+    void 입력값_파싱_invalid() {
         String input = "311141";
 
-        Main.inputValidate(input);
+        assertThrows(IllegalArgumentException.class, () -> {
+            Main.parseInput(input);
+        });
     }
 
     @Test
-    void 좌표계_포맷_검증_valid_case() {
+    void 입력값_파싱_valid() {
         String input = "(12, 3)";
 
-        Main.inputValidate(input);
+        Coordinate coordinate = Main.parseInput(input);
+
+        assertThat(coordinate.getX()).isEqualTo(12);
+        assertThat(coordinate.getY()).isEqualTo(3);
     }
 
 }
